@@ -11,17 +11,17 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
         stage('Unit Test') {
             steps {
-                sh 'npm run unit-test'
+               bat 'npm run unit-test'
             }
         }
         stage('Integration Test') {
             steps {
-                sh 'npm run integration-test'
+                bat 'npm run integration-test'
             }
         }
         stage('Delivery') {
