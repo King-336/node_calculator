@@ -10,28 +10,28 @@ pipeline {
 
         stage('Build') {
             steps {
-                echo Starting NPM install
-        	where npm
-        	npm ci
-        	echo NPM install done
+                powershell 'echo Starting NPM install'
+        	powershell 'where npm'
+        	powershell 'npm ci'
+        	powershell 'echo NPM install done'
             }
         }
 
         stage('Unit Test') {
             steps {
-                bat 'npm run unit-test'
+                powershell 'npm run unit-test'
             }
         }
 
         stage('Integration Test') {
             steps {
-                bat 'npm run integration-test'
+                powershell 'npm run integration-test'
             }
         }
 
         stage('Delivery') {
             steps {
-                echo "Building the project..."
+                powershell 'echo "Building the project..."'
             }
         }
     }
