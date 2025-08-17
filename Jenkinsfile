@@ -10,10 +10,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                powershell 'echo Starting NPM install'
-        	powershell 'where npm'
         	powershell 'npm ci'
-        	powershell 'echo NPM install done'
             }
         }
 
