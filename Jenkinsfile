@@ -10,7 +10,10 @@ pipeline {
 
         stage('Build') {
             steps {
-                bat 'npm ci'
+                bat 'echo Starting NPM install'
+        	bat 'where npm'
+        	bat 'npm ci'
+        	bat 'echo NPM install done'
             }
         }
 
